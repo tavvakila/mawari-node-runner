@@ -1,0 +1,16 @@
+image:
+  file: .gitpod.Dockerfile  # Opsional, lihat di bawah
+
+tasks:
+  - init: |
+      npm install
+      npm run install:mawari
+    command: npm run dev
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 8080  # Untuk Mawari dashboard jika ada
+
+env:
+  - MAWARI_LICENSE_KEY=your_license_here  # Ganti dengan key Anda
